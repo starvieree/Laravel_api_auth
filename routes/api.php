@@ -14,7 +14,6 @@ Route::get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// Route::get('/admin', [AdminController::class, 'showUser']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/admin', [AdminController::class, 'showUsers'])->middleware(CheckRole::class . ':admin');
